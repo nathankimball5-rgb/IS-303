@@ -22,15 +22,16 @@ while user_choice == "Y":
             guess = int(input("Enter your guess: "))
 
         if guess > number:
-            print("Lower")
+            print("Guess lower")
 
         elif guess < number:
-            print("Higher")
+            print("Guess higher")
 
         #Loop ends
 
     #Print the number of guesses 
-    print(num_guesses)
+    print("Correct!")
+    print("You got it in " + str(num_guesses) + " guesses!")
 
     if num_guesses <= 3:
         print("Amazing!")
@@ -39,9 +40,9 @@ while user_choice == "Y":
     elif num_guesses <=7:
         print("Good job!")
     elif num_guesses <=9:
-        print("Took a little longer, but you got there!")
+        print("You need to lock in")
 
     #Ask user to press "y" if they want to play again. 
-    user_choice=input("If you'd like to play agian press y if not press any other key")
+    user_choice=input("If you'd like to play agian press y if not press any other key:")
 
 #loop
