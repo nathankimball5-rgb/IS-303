@@ -1,9 +1,9 @@
 user_choice = "Y"
+import random
 #while user has pressed" "y"
-while user_choice == "Y":
+while user_choice == "Y" or user_choice == "y":
 
     #computer generates a random number between 1 and 100.
-    import random
     number = random.randint(1, 100) 
     num_guesses = 0
     guess = 0
@@ -14,12 +14,13 @@ while user_choice == "Y":
         #Ask the user for a guess between 1 and 100. 
         print("I'm thinking of a number between 1 and 100.")
         guess = int(input("Enter your guess: "))
-        num_guesses += 1
 
         #While the guess is < 1 or > 100 
         while guess < 1 or guess > 100:
             print ("Invalid guess, please try again")
             guess = int(input("Enter your guess: "))
+
+        num_guesses += 1
 
         if guess > number:
             print("Guess lower")
@@ -40,9 +41,11 @@ while user_choice == "Y":
     elif num_guesses <=7:
         print("Good job!")
     elif num_guesses <=9:
-        print("You need to lock in")
+        print("Took a little longer, but you got there!")
+    elif num_guesses >= 10:
+        print("You need to lock in.")
 
     #Ask user to press "y" if they want to play again. 
-    user_choice=input("If you'd like to play agian press y if not press any other key:")
+    user_choice=input("If you'd like to play again press y if not press any other key:")
 
 #loop
