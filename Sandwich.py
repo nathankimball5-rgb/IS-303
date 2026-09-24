@@ -7,8 +7,8 @@ while user_choice == "Y" or user_choice == "y":
     number = random.randint(1, 100) 
     num_guesses = 0
     guess = 0
+
     # while the user has not guessed the number
-    
     while guess != number:
 
         #Ask the user for a guess between 1 and 100. 
@@ -20,8 +20,10 @@ while user_choice == "Y" or user_choice == "y":
             print ("Invalid guess, please try again")
             guess = int(input("Enter your guess: "))
 
+        #Counts the number of guesses that the user has made.
         num_guesses += 1
 
+        #If the user's guess is greater than the number, tell them to guess lower. If thie guess is lower than the number, tell them to guess higher. 
         if guess > number:
             print("Guess lower")
 
@@ -34,6 +36,7 @@ while user_choice == "Y" or user_choice == "y":
     print("Correct!")
     print("You got it in " + str(num_guesses) + " guesses!")
 
+    #Based on the amount of guesses, print out the appropriate response.
     if num_guesses <= 3:
         print("Amazing!")
     elif num_guesses <=5:
